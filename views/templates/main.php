@@ -37,10 +37,13 @@
         </nav>
     </header>
 
-    <main>    
+    <main class="mainContainer">    
         <?= $content /* Ici est affiché le contenu réel de la page. */ ?>
     </main>
     
-    <footer>
-        <p>Copyright © Tom Troc 2024</p>
+    <footer class="footer">
+        <p>Politique de confidentialité</p>
+        <p>Mentions légales</p>
+        <p>Tom Troc©</p>
+        <img src="img/logo-footer.svg" alt="Logo Tom Troc" class="footerLogo">
     </footer>

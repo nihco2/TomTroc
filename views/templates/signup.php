@@ -1,5 +1,6 @@
-<form action="index.php?action=create" method="POST">
-<h1>Inscription</h1>
+<h1 class="mainTitle">Inscription</h1>
+<div class="connexionImg"></div>
+<form action="index.php?action=create" method="POST" class="connexionForm">
     <div>
         <label for="username">Pseudo</label>
         <input type="text" id="username" name="username" required>

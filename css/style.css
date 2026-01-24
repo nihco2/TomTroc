@@ -1,17 +1,45 @@
+:root {
+    --primary-color: #292929;
+    --secondary-color: #A6A6A6;
+    --background-color: #FAF9F7;
+    --header-background: #F5F3EF;
+    --cta-color: #00AC66;
+}
+
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #FFFFFF;
     color: #333333;
+    display: flex;
+    flex-direction: column;
 }
 
 .header{
-    background-color: #F5F3EF;
+    background-color: var(--header-background);
     padding: 20px 120px;
     display: grid;
     grid-template-columns: 1fr 5fr;
     align-items: center;
+}
+
+.footer {
+    padding: 15px 50px;
+    text-align: center;
+    font-size: .8em;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer p {
+    color: var(--primary-color);
+    margin-right: 50px;
 }
 
 .nav {
@@ -22,13 +50,80 @@ body {
 
 .nav a {
     text-decoration: none;
-    color: #292929;
+    color: var(--primary-color);
     font-size: .9em;
     margin: 0 20px;
 }
 
 .nav .divider{
-    color: #A6A6A6;
+    color: var(--secondary-color);
     margin-right: 50px;
     opacity: 0.2;
+}
+
+.mainContainer {
+    flex-grow: 1;
+    padding: 0px 0px 0px 120px;
+    background-color: var(--background-color);
+}
+
+.mainTitle {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    margin-top: 120px;
+    color: var(--primary-color);
+    font-weight: 400;
+}
+
+.connexionImg {
+    background-image: url('../img/connexion.png');
+    width: 60%;
+    height: 100%;
+    background-size: cover;
+    float: right;
+}
+
+.connexionForm {
+    margin-top: 50px;
+    width: 300px;
+}
+
+.connexionForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+    font-size: .9em;
+}
+
+.connexionForm input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.connexionForm button {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--cta-color);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.connexionForm + p {
+    margin-top: 20px;
+    font-size: .9em;
+    color: var(--secondary-color);
+}
+
+.connexionForm + p a {
+    color: var(--secondary-color);
+    text-decoration: underline;
 }

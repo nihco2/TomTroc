@@ -1,5 +1,6 @@
-<h1>Inscription</h1>
-<form action="index.php?action=login" method="post">
+<h1 class="mainTitle">Connexion</h1>
+<div class="connexionImg"></div>
+<form action="index.php?action=login" method="post" class="connexionForm">
     <div>
         <label for="email">Adresse email</label>
         <input type="email" id="email" name="email" required>
@@ -12,4 +13,4 @@
         <button type="submit">Se connecter</button>
     </div>
 </form>
-<p>Pas de compte ?<a href="index.php?action=signup">Inscrivez-vous</a>.</p>
+<p>Pas de compte ? <a href="index.php?action=signup">Inscrivez-vous</a>.</p>
