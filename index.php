@@ -2,6 +2,7 @@
 
 require_once('config/config.php');
 require_once('controllers/MainController.php');
+require_once('controllers/HomeController.php');
 require_once('services/Utils.php');
 require_once('models/DBManager.php');
 require_once('views/View.php');
@@ -10,12 +11,13 @@ require_once('views/View.php');
 $action = isset($_GET['action']) ? $_GET['action'] : 'home';
 // On instancie le contrôleur principal.
 $controller = new MainController();
+$homeController = new HomeController();
 // Try catch global pour gérer les erreurs
 try {
     // Pour chaque action, on appelle le bon contrôleur et la bonne méthode.
     switch ($action) {
         case 'home':
-            $controller->showHome();
+            $homeController->showHome();
             break;
         case 'signin':
             $controller->showSignIn();

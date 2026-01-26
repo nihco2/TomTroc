@@ -2,7 +2,7 @@
     --primary-color: #292929;
     --secondary-color: #A6A6A6;
     --background-color: #FAF9F7;
-    --header-background: #F5F3EF;
+    --main-background: #F5F3EF;
     --cta-color: #00AC66;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 .header{
-    background-color: var(--header-background);
+    background-color: var(--main-background);
     padding: 20px 120px;
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -63,8 +63,13 @@ body {
 
 .mainContainer {
     flex-grow: 1;
-    padding: 0px 0px 0px 120px;
     background-color: var(--background-color);
+}
+
+.login {
+    justify-content: space-between;
+    padding:0 0 0 120px;
+    display: flex;
 }
 
 .mainTitle {
@@ -77,12 +82,13 @@ body {
     font-weight: 400;
 }
 
-.connexionImg {
-    background-image: url('../img/connexion.png');
-    width: 60%;
-    height: 100%;
-    background-size: cover;
-    float: right;
+.secondaryTitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 400;
 }
 
 .connexionForm {
@@ -106,13 +112,13 @@ body {
     box-sizing: border-box;
 }
 
-.connexionForm button {
+.button {
     width: 100%;
     padding: 20px;
     background-color: var(--cta-color);
     color: #FFFFFF;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 1em;
 }
@@ -126,4 +132,165 @@ body {
 .connexionForm + p a {
     color: var(--secondary-color);
     text-decoration: underline;
+}
+
+.homepage {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 120px;
+    background-color: var(--main-background);
+    flex-grow: 1;
+}
+
+.homepage .infoSection {
+    width: 34%;
+    margin-left: 150px;
+}
+
+.homepage .infoSection a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 20px 30px;
+    background-color: var(--cta-color);
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.homepage .imageSection {
+    position: relative;
+    width: 50%;
+    height: 590px;
+    background-image: url('../img/home.png');
+    background-size: cover;
+    background-position: center;
+    margin-right: 200px;
+    margin-left: 120px;
+}
+
+.homepage .imageSection em {
+    position: absolute;
+    bottom: -30px;
+    right: 0px;
+    border-radius: 4px;
+    font-size: .9em;
+    color: var(--secondary-color);
+}
+
+.books-section {
+    padding: 40px 120px;
+    background-color: var(--background-color);
+    flex-grow: 1;
+}
+
+.booksContainer {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    background-color: var(--background-color);
+    justify-content: center;
+}
+
+.bookCard {
+    background-color: #FFFFFF;
+    width: 200px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.bookCard .bookTitle {
+    font-size: 1em;
+    font-weight: 400;
+    margin: 20px 0 5px 0;
+    color: var(--primary-color);
+}
+
+.bookCard .bookAuthor {
+    font-size: .9em;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+.bookCard .bookDescription {
+    font-size: .85em;
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.benefitSection {
+    background-color: var(--main-background);
+    padding-top: 50px;
+}
+
+.benefitSection p {
+    color: var(--primary-color);
+    width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+.benefitSection ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.benefitSection ul li {
+    width: 180px;
+    background-color: #FFFFFF;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.secondary-cta {
+    border: var(--cta-color) 1px solid;
+    color: var(--cta-color);
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 75px;
+}
+
+.imageSection {
+    background-image: url('../img/full-width-image.png');
+    height: 230px;
+    background-size: cover;
+}
+
+.valueTitle {
+    margin-top: 100px;
+}
+
+.valueDescription {
+    margin-bottom: 50px;
+    margin: 20px auto;
+    width: 500px;
+    text-align: left;
+    font-weight: 300;
+}
+
+.our-values {
+    position: relative;
+    display: flex;
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    font-style: italic;
+    width: 500px;
+    gap: 40px;
+    margin: 0 auto 150px auto;
+}
+
+.our-values img {
+    position: absolute;
+    right: -20px;
 }
