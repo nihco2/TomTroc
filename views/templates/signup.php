@@ -16,7 +16,7 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <div>
-                <button type="submit" class="button">S'inscrire</button>
+                <button type="submit" class="primaryButton">S'inscrire</button>
             </div>
         </form>
         <p>Déjà un compte ? <a href="index.php?action=signin">Connectez-vous</a>.</p>

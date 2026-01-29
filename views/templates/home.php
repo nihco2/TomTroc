@@ -2,7 +2,7 @@
     <div class="infoSection">
         <h1 class="mainTitle">Rejoignez nos lecteurs passionnés </h1>
         <p>Donnez une nouvelle vie à vos livres en les échangeant avec d'autres amoureux de la lecture. Nous croyons en la magie du partage de connaissances et d'histoires à travers les livres. </p>
-        <a href="index.php?action=signup">Découvrir</a>
+        <a href="index.php?action=books">Découvrir</a>
     </div>
     <div class="imageSection">
         <em>Hamza</em>
@@ -30,7 +30,7 @@
             <li>Parcourez les livres disponibles chez d'autres membres.</li>
             <li>Proposez un échange et discutez avec d'autres passionnés de lecture.</li>
         </ul>
-        <p><a class="secondary-cta" href="index.php?action=signup">Voir tous les livres</a></p>
+        <p><a class="secondary-cta" href="index.php?action=books">Voir tous les livres</a></p>
     </div>
     <div class="imageSection">
     </div>

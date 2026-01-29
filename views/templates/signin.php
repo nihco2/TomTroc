@@ -11,7 +11,7 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <div>
-                <button type="submit" class="button">Se connecter</button>
+                <button type="submit" class="primaryButton">Se connecter</button>
             </div>
         </form>
         <p>Pas de compte ? <a href="index.php?action=signup">Inscrivez-vous</a>.</p>

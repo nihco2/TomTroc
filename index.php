@@ -3,6 +3,8 @@
 require_once('config/config.php');
 require_once('controllers/MainController.php');
 require_once('controllers/HomeController.php');
+require_once('controllers/BooksController.php');
+require_once('controllers/AccountController.php');
 require_once('services/Utils.php');
 require_once('models/DBManager.php');
 require_once('views/View.php');
@@ -12,12 +14,37 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'home';
 // On instancie le contrôleur principal.
 $controller = new MainController();
 $homeController = new HomeController();
+$booksController = new BooksController();
+$accountController = new AccountController();
 // Try catch global pour gérer les erreurs
+
+// var_dump($_SERVER['REQUEST_URI']);
 try {
     // Pour chaque action, on appelle le bon contrôleur et la bonne méthode.
     switch ($action) {
         case 'home':
             $homeController->showHome();
+            break;
+        case 'books':
+            $booksController->showBooks();
+            break;
+        case 'search':
+            $booksController->searchBooks();
+            break;
+        case 'bookDetail':
+            $booksController->showBookDetail();
+            break;
+        case 'account':
+            $accountController->showAccount();
+            break;
+        case 'editAccount':
+            $accountController->editAccount();
+            break;  
+        case 'editBook':
+            $booksController->editBook();
+            break;
+        case 'updateBook':
+            $booksController->updateBook();
             break;
         case 'signin':
             $controller->showSignIn();

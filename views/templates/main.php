@@ -13,15 +13,15 @@
         <nav class="nav">
             <div>
                 <a href="index.php">Accueil</a>
-                <a href="index.php?action=about">Nos livres à l'échange</a>
+                <a href="index.php?action=books">Nos livres à l'échange</a>
             </div>
             <div>
                 <span class="divider">|</span>
-                <a href="index.php?action=postItem">
+                <a href="index.php?action=messaging">
                     <img src="img/message-icon.svg" alt="Messagerie">
                     Messagerie
                 </a>
-                <a href="index.php?action=postItem">
+                <a href="index.php?action=account">
                     <img src="img/account-icon.svg" alt="Mon compte">
                     Mon compte
                 </a>

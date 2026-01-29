@@ -12,4 +12,14 @@ class Utils {
             header('Location: index.php?action=signin');
         }
     }
+
+    /**
+     * Sanitize user input to prevent XSS attacks.
+     * @param string $input
+     * @return string
+     */
+    public static function sanitizeInput(string $input) : string
+    {
+        return htmlspecialchars(trim($input), ENT_QUOTES, 'UTF-8');
+    }
 }

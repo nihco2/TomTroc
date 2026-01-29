@@ -4,6 +4,8 @@
     --background-color: #FAF9F7;
     --main-background: #F5F3EF;
     --cta-color: #00AC66;
+    --input-color: #EDF2F6;
+    --input-border-color: #F0F0F0;
 }
 
 html, body {
@@ -50,6 +52,7 @@ body {
 
 .nav a {
     text-decoration: none;
+    cursor: pointer;
     color: var(--primary-color);
     font-size: .9em;
     margin: 0 20px;
@@ -112,15 +115,18 @@ body {
     box-sizing: border-box;
 }
 
-.button {
+.primaryButton {
+    display: block;
     width: 100%;
     padding: 20px;
     background-color: var(--cta-color);
     color: #FFFFFF;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1em;
+    text-decoration: none;
+    text-align: center;
 }
 
 .connexionForm + p {
@@ -183,10 +189,9 @@ body {
     flex-grow: 1;
 }
 
-.booksContainer {
+.books-section .booksContainer {
     display: flex;
     gap: 30px;
-    overflow-x: auto;
     padding-bottom: 20px;
     background-color: var(--background-color);
     justify-content: center;
@@ -199,6 +204,8 @@ body {
     display: flex;
     flex-direction: column;
     padding: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .bookCard .bookTitle {
@@ -293,4 +300,323 @@ body {
 .our-values img {
     position: absolute;
     right: -20px;
+}
+
+.books-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 200px;
+}
+.booksContainer {
+    padding: 0 200px 100px 200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 50px;
+}
+
+.searchIcon {
+    position: absolute;
+    margin: 10px;
+}
+
+.searchInput {
+    padding: 10px;
+    border: 1px solid #F0F0F0;
+    border-radius: 4px;
+    width: 300px;
+    text-indent: 30px;
+    color: var(--secondary-color);
+}
+
+#bookDetail {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 120px;
+    background-color: var(--background-color);
+    flex-grow: 1;
+}
+.bookDetailImage {
+    width: 50%;
+}
+
+.bookDesc {
+    width: 40%;
+}
+
+.bookDesc h3 {
+    text-align: left;
+}
+
+.bookDesc .bookAuthor {
+    margin-top: -20px;
+    color: var(--secondary-color);
+}
+
+.bookDesc hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    width: 50px;
+    border-top: 2px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.bookDesc h4 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: .8em;
+}
+
+.bookDesc .user {
+    margin-bottom: 30px;
+    font-size: .9em;
+    display: flex;
+    background-color: white;
+    width: fit-content;
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+
+.bookDesc .user  img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+#account {
+    padding: 100px 120px;
+    background-color: var(--background-color);
+    flex-grow: 1;
+}
+#account .secondaryTitle {
+    text-align: left;
+}
+
+.accountCard {
+    background-color: #FFFFFF;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 100px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.accountInfos {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+    color: var(--primary-color);
+}
+
+.userIcon {
+    width: 130px;
+    height: 130px;
+    margin: 50px auto 20px auto;
+}
+
+#account .username {
+    font-size: 1.2em;
+    text-align: center;
+    border-top: 1px solid #E0E0E0;
+    width: 300px;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.editAccountLink {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: .9em;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.register-date {
+    color: var(--secondary-color);
+    font-size: .9em;
+}
+
+.library-header {
+    text-transform: uppercase;
+    font-size: .8em;
+    font-weight: bold;
+}
+
+.library-wrapper {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 50px;
+    justify-content: center;
+}
+
+.user-info__field {
+    margin-bottom: 20px;
+}
+
+.myAccount {
+    padding: 0 100px;
+    margin-left: 40px;
+}
+
+.myAccount h6 {
+    margin-bottom: 50px;
+    font-size: 1em;
+    text-align: left;
+    font-weight: 400;
+}
+
+.userInfoField {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: var(--secondary-color);
+    font-size: .9em;
+}
+
+.userInfoField label {
+    margin-bottom: 5px;
+}
+
+.userInfoField input {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 300px;
+    background-color: var(--input-color);
+}   
+
+.myAccount .secondary-cta {
+    width: 150px;
+    font-size: .9em;
+    float: left;
+}
+
+.booksTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+}
+.booksTable thead {
+    text-transform: uppercase;
+    font-size: .8em;
+}
+
+.booksTable th, .booksTable td {
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.booksTable td {
+    padding-top: 10px;
+    font-size: .9em;
+    width: 200px;
+}
+
+.booksTable .tag {
+    background-color: #C56D6D;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: .8em;
+}
+
+.booksTable .tag.available {
+    background-color: #00AC66;
+}
+
+.booksTable .editLink{
+    color: var(--primary-color);
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.booksTable .deleteLink{
+    color: #C56D6D;
+    display: inline-block;
+}
+
+#editBook .imgBook {
+    display: flex;
+    flex-direction: column;
+}
+
+#editBook h2 {
+    margin: 100px 40px 0 120px;
+    text-align: left;
+}
+
+#editBook .editBookContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 120px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px 50px;
+}
+
+#editBook .imgBook {
+    width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#editBook .bookDetailImage {
+    width: 100%;
+}
+
+#editBook .bookDesc {
+    color: var(--secondary-color);
+    font-size: .9em;
+    margin-bottom: 10px;
+}
+
+#editBook .editPhoto {
+    margin: 10px 0 30px 0;
+    display: flex;
+    justify-content: end;
+    font-size: .9em;
+    text-decoration: underline;
+}
+
+#editBook .editForm {
+    width: 40%;
+    margin-top: 40px;
+}
+
+#editBook .editForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+    font-size: .9em;
+}
+
+#editBook .editForm input, #editBook .editForm textarea, #editBook .editForm select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 30px;
+    background-color: var(--input-color);
+    border-radius: 4px;
+    border: none;
+    color: var(--primary-color);
+}
+
+.editForm textarea {
+    height: 400px;
+}
+
+.editForm .primaryButton {
+    width: 150px;
+    font-size: .9em;
 }
