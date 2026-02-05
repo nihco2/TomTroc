@@ -1,0 +1,1 @@
+SELECT * FROM `conversations` AS c INNER JOIN `messages` AS m ON c.id = m.conversation_id INNER JOIN users AS u ON u.id = c.user_id WHERE c.id = 1;

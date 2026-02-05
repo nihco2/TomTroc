@@ -6,6 +6,7 @@ class AccountController {
     public function showAccount() {
         Utils::isUserConnected();
         $user = $_SESSION['user'];
+        var_dump($user['id']);
         $userId = $user['id'];
         $accountManager = new AccountManager();
         $user = $accountManager->getUserById($userId);
@@ -63,5 +64,24 @@ class AccountController {
             $view = new View('editAccount');
             $view->render('editAccount', ['user' => $user]);
         }
+    }
+
+    public function showProfile() {
+        Utils::isUserConnected();
+        $user = $_SESSION['user'];
+        $userId = $user['id'];
+        $accountManager = new AccountManager();
+        $user = $accountManager->getUserById($userId);
+
+        if (!$user) {
+            throw new Exception("Utilisateur non trouvé.");
+        }
+
+        $view = new View('profile');
+        $view->render('profile', [
+            'user' => $user,
+            'bookByUser'=> $accountManager->getBooksByUserId($userId),
+            'registrationDate' => date('d/m/Y', strtotime($user['created_at'])),
+        ]);
     }
 }

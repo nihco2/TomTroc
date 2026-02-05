@@ -6,6 +6,19 @@
     <title>Tom Troc</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="img/favicon.png" />
+    <script defer>
+        function showPopup() {
+            const popup = document.querySelector('dialog');
+            popup.showModal();
+            popup.style = "display: flex;";
+        }
+
+        function closePopup() {
+            const popup = document.querySelector('dialog');
+            popup.close();
+            popup.style = "display: none;";
+        }
+    </script>
 </head>
 <body>
     <header class="header">

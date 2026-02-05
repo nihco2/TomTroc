@@ -1,5 +1,4 @@
-<section id="account">
-    <h2 class="secondaryTitle">Mon compte</h2>
+<section id="profile">
     <div class="accountInfos">    
         <div class="accountCard">
             <img src="img/user-profile-img.png" alt="Icône utilisateur" class="userIcon">
@@ -12,37 +11,16 @@
                 <img src="./img/book-logo.svg" alt="Logo livres" class="library-logo">
                 <p class="books-count"><?= count($bookByUser) ?> livres</p>
             </div>
+            <p><a class="secondary-cta" href="index.php?action=messaging">Ecrire un message</a></p>
         </div>
         <div class="accountCard rightCard">
-            <h6>Vos informations personnelles</h6>
-            <form action="index.php?action=editAccount" method="POST">
-                <div class="userInfoField">
-                    <label for="email">Adresse Email</label>
-                    <input type="email" id="email" name="email" value="<?= htmlspecialchars($user['email']) ?>">
-                </div>
-                <div class="userInfoField">
-                        <label for="username">Mot de passe</label>
-                        <input type="password" id="password" name="password" value="<?= $password ?>">
-                    </div>
-                    <div class="userInfoField">
-                        <label for="username">Pseudo</label>
-                        <input type="text" id="username" name="username" value="<?= htmlspecialchars($user['username']) ?>">
-                    </div>
-                    <button class="secondary-cta">Enregistrer</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div>
-        <table class="booksTable" cellpadding="30">
+            <table class="booksTable">
             <thead>
                 <tr>
                     <th>photo</th>
                     <th>titre</th>
                     <th>auteur</th>
                     <th>description</th>
-                    <th>disponibilité</th>
-                    <th>action</th>
                 </tr>
             </thead>
             <tbody>
@@ -57,14 +35,11 @@
                         <td><?= htmlspecialchars($book['author']) ?></td>
                         <!-- limit 50 characters in description -->
                         <td><?= htmlspecialchars(substr($book['description'], 0, 50)) ?>...</td>
-                        <td><span class="tag <?= $book['is_available'] ? 'available' : 'unavailable' ?>"><?= $book['is_available'] ? 'Disponible' : 'Indisponible' ?></span></td>
-                        <td>
-                            <a href="index.php?action=editBook&id=<?= $book['id'] ?>" class="editLink">Editer</a>
-                            <a href="index.php?action=bookDetail&id=<?= $book['id'] ?>" class="deleteLink">Supprimer</a>
-                        </td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
+            </div>
+        </div>
     </div>
 </section>

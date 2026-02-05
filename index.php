@@ -5,6 +5,7 @@ require_once('controllers/MainController.php');
 require_once('controllers/HomeController.php');
 require_once('controllers/BooksController.php');
 require_once('controllers/AccountController.php');
+require_once('controllers/MessagingController.php');
 require_once('services/Utils.php');
 require_once('models/DBManager.php');
 require_once('views/View.php');
@@ -16,6 +17,7 @@ $controller = new MainController();
 $homeController = new HomeController();
 $booksController = new BooksController();
 $accountController = new AccountController();
+$messagingController = new MessagingController();
 // Try catch global pour gérer les erreurs
 
 // var_dump($_SERVER['REQUEST_URI']);
@@ -45,6 +47,18 @@ try {
             break;
         case 'updateBook':
             $booksController->updateBook();
+            break;
+        case 'profile':
+            $accountController->showProfile();
+            break;
+        case 'messaging':
+            $messagingController->showMessaging();
+            break;
+        case 'sendMessage':
+            $messagingController->sendMessage();
+            break;
+        case 'addConversation':
+            $messagingController->addConversation();
             break;
         case 'signin':
             $controller->showSignIn();
