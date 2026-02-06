@@ -50,7 +50,7 @@
         </div>
         <form action="index.php?action=sendMessage" method="POST" class="messageForm">
             <div class="formGroup">
-                <input type="hidden" name="conversation_id" value="<?= isset($conversationId) ? (int)$conversationId : '' ?>">
+                <input type="hidden" name="conversation_id" value="<?= (int)$conversationId ?>">
                 <input type="text" id="message" name="message" placeholder="Tapez votre message ici">
             </div>
             <button type="submit" class="primaryButton">Envoyer</button>

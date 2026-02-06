@@ -29,11 +29,17 @@ class UserManager extends AbstractEntityManager {
 
     public function getUsersByConversationUserId($userId) {
         // avoid duplicates by checking if a conversation already exists between the two users
-        $stmt = $this->db->prepare("SELECT DISTINCT u.* FROM users u JOIN conversations c ON (u.id = c.user_id OR u.id = c.receiver_id) WHERE (c.user_id = ? OR c.receiver_id = ?) AND u.id != ?");
+        //select conversations by user id and receiver id, then get the user id of the other user in the conversation
+        $stmt = $this->db->prepare("
+        SELECT conversations.id, users.username FROM conversations
+        JOIN users ON (users.id = conversations.user_id OR users.id = conversations.receiver_id)
+        WHERE (conversations.user_id = ? OR conversations.receiver_id = ?)
+        AND users.id != ?");
         $stmt->bindValue(1, (int)$userId, PDO::PARAM_INT);
         $stmt->bindValue(2, (int)$userId, PDO::PARAM_INT);
         $stmt->bindValue(3, (int)$userId, PDO::PARAM_INT);
         $stmt->execute();
+        // return conversation id
         return $stmt->fetchAll();
     }
 

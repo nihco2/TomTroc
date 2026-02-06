@@ -10,8 +10,7 @@ class MessagingManager extends AbstractEntityManager {
         $stmt = $this->db->prepare("INSERT INTO messages (conversation_id, sender_id, content, sent_at) VALUES (?, ?, ?, NOW())");
         $stmt->bindValue(1, (int)$conversationId, PDO::PARAM_INT);
         $stmt->bindValue(2, (int)$senderId, PDO::PARAM_INT);
-        $stmt->bindValue(3, $messageContent, PDO::PARAM_STR);
-        return $stmt->execute();
+        return $stmt->execute([$conversationId, $senderId, $messageContent]);
     }
 
     public function getMessagesByConversationId($conversationId) {
@@ -38,6 +37,10 @@ class MessagingManager extends AbstractEntityManager {
         $stmt = $this->db->prepare("INSERT INTO conversations (user_id, receiver_id) VALUES (?, ?)");
         $stmt->bindValue(1, (int)$userId, PDO::PARAM_INT);
         $stmt->bindValue(2, (int)$receiverId, PDO::PARAM_INT);
-        return $stmt->execute();
+        // Récupérer l'ID de la conversation nouvellement créée
+        if ($stmt->execute()) {
+            return $this->db->lastInsertId();
+        }
+        return false;
     }
 }

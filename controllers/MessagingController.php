@@ -11,14 +11,13 @@ class MessagingController {
         $conversations = (new UserManager())->getUsersByConversationUserId($userId);
         $conversationId = isset($_GET['conversation_id']) ? (int)$_GET['conversation_id'] : null;
         $users = (new UserManager())->getAllUsers($userId);
-
-        var_dump($conversations );
+        $messages = (new MessagingManager())->getMessagesByConversationId($conversationId);
 
         $view = new View('messaging');
         $view->render('messaging', [
             'user' => $user,
             'userId' => $userId,
-            'messages' => $conversationId ? (new MessagingManager())->getMessagesByConversationId($conversationId) : [],
+            'messages' => $messages,
             'conversations' => $conversations,
             'conversationId' => $conversationId,
             'users' => $users
