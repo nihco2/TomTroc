@@ -1,1 +1,14 @@
 SELECT * FROM `conversations` AS c INNER JOIN `messages` AS m ON c.id = m.conversation_id INNER JOIN users AS u ON u.id = c.user_id WHERE c.id = 1;
+
+ SELECT c.id, u.username, c.creation_date FROM conversations c
+        JOIN users u ON (u.id = c.user_id OR u.id = c.receiver_id) AND u.id != ?
+        WHERE (c.user_id = ? OR c.receiver_id = ?)
+        ORDER BY c.creation_date DESC");
+
+
+            SELECT c.id, u.username, m.sent_at FROM conversations c
+            JOIN users u ON (c.user_id = u.id OR c.receiver_id = u.id) AND u.id != ?
+            LEFT JOIN messages m ON m.conversation_id = c.id
+            WHERE (c.user_id = ? OR c.receiver_id = ?)
+            GROUP BY c.id, u.username
+            ORDER BY m.sent_at DESC

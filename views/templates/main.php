@@ -18,6 +18,7 @@
             popup.close();
             popup.style = "display: none;";
         }
+
     </script>
 </head>
 <body>

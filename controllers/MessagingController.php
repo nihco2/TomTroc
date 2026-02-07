@@ -20,7 +20,8 @@ class MessagingController {
             'messages' => $messages,
             'conversations' => $conversations,
             'conversationId' => $conversationId,
-            'users' => $users
+            'users' => $users,
+            'isSelected' => $isSelected ?? false
         ]);
     }
 

@@ -640,7 +640,7 @@ body {
 
 #messaging .leftBlock {
     width: 30%;
-    background-color: white;
+    background-color: var(--tertiary-color);
     margin-left: 140px;
 }
 
@@ -762,10 +762,29 @@ body {
     cursor: pointer;
 }
 
+.conversationItem.selected {
+    background-color: white;
+}
+
+.conversationItem .lastMessageDate {
+    font-size: .9em;
+    margin-left: auto;
+}
+
+.conversationItem .lastMessage {
+    color: var(--secondary-color);
+    font-size: .9em;
+    display: inline-block;
+    /* join 3 columns; */
+    grid-column: 1 / span 3;
+    text-indent: 68px;
+}
+
 .conversationItem a{
     text-decoration: none;
     color: var(--primary-color);
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
 }
 

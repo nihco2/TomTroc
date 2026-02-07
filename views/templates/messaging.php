@@ -9,10 +9,13 @@
         <div class="conversationsList">
             <?php
             foreach ($conversations as $conversation) {
-                echo '<div class="conversationItem">';
+                echo '<div class="conversationItem' . ($conversation['id'] === $conversationId ? ' selected' : '') . '">';
                 echo '<a href="index.php?action=messaging&conversation_id=' . $conversation['id']. '">';
                 echo '<img src="img/user-profile-img.png" alt="Image de profil de ' . htmlspecialchars($conversation['username']) . '">';
                 echo htmlspecialchars($conversation['username']);
+                echo '<span class="lastMessageDate">' . date('H:i', strtotime($conversation['sent_at'])) . '</span>';
+                // limit 50 caractères du message
+                echo '<span class="lastMessage">' . (htmlspecialchars(strlen($conversation['content']) > 20 ? substr($conversation['content'], 0, 20) . '...' : $conversation['content'])) . '</span>';
                 echo '</a>';
                 echo '</div>';
             }
