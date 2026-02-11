@@ -34,6 +34,10 @@
                 <a href="index.php?action=messaging">
                     <img src="img/message-icon.svg" alt="Messagerie">
                     Messagerie
+                    <!-- Si l'utilisateur a des messages non lus, on affiche un badge avec le nombre de messages non lus -->
+                    <?php if (isset($_SESSION['user']) && isset($_SESSION['unread_messages_count']) && $_SESSION['unread_messages_count'] > 0): ?>
+                        <span class="unreadBadge"><?= $_SESSION['unread_messages_count'] ?></span>
+                    <?php endif; ?>
                 </a>
                 <a href="index.php?action=account">
                     <img src="img/account-icon.svg" alt="Mon compte">

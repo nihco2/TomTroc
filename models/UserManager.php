@@ -65,4 +65,19 @@ class UserManager extends AbstractEntityManager {
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+    public function getUnreadMessagesCount($userId) {
+        $stmt = $this->db->prepare("
+            SELECT COUNT(*) AS unread_count
+            FROM messages m
+            JOIN conversations c ON m.conversation_id = c.id
+            WHERE m.sender_id != ? AND m.is_read = 0 AND (c.user_id = ? OR c.receiver_id = ?)
+        ");
+        $stmt->bindValue(1, (int)$userId, PDO::PARAM_INT);
+        $stmt->bindValue(2, (int)$userId, PDO::PARAM_INT);
+        $stmt->bindValue(3, (int)$userId, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetch();
+        return $result['unread_count'] ?? 0;
+    }
 }

@@ -61,6 +61,7 @@ class MainController {
 
         $userManager = new UserManager();
         $user = $userManager->getUserByEmail($email);
+        $unread_messages_count = $userManager->getUnreadMessagesCount($user['id']);
 
         if (!$user || !password_verify($password, $user['password'])) {
             throw new Exception("Email ou mot de passe incorrect.");
@@ -68,6 +69,7 @@ class MainController {
 
         // Stockage des informations de l'utilisateur dans la session
         $_SESSION['user'] = $user;
+        $_SESSION['unread_messages_count'] = $unread_messages_count;
 
         // Redirection vers la page d'accueil après connexion réussie
         header('Location: index.php?action=home');
