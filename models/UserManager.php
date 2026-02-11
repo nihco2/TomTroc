@@ -10,7 +10,18 @@ class UserManager extends AbstractEntityManager {
     public function createUser($username, $email, $password) {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         $stmt = $this->db->prepare("INSERT INTO users (username, email, password, created_at) VALUES (?, ?, ?, NOW())");
-        return $stmt->execute([$username, $email, $hashedPassword]);
+        // return user with id
+        if ($stmt->execute([$username, $email, $hashedPassword])) {
+            $userId = $this->db->lastInsertId();
+            return $this->getUserById($userId);
+        }
+        return false;
+    }
+
+    public function getUserById($id) {
+        $stmt = $this->db->prepare("SELECT * FROM users WHERE id = ?");
+        $stmt->execute([$id]);
+        return $stmt->fetch();
     }
 
     public function getUserByEmail($email) {

@@ -6,7 +6,6 @@ class AccountController {
     public function showAccount() {
         Utils::isUserConnected();
         $user = $_SESSION['user'];
-        var_dump($user['id']);
         $userId = $user['id'];
         $accountManager = new AccountManager();
         $user = $accountManager->getUserById($userId);
