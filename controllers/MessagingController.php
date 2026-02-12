@@ -12,6 +12,10 @@ class MessagingController {
         $conversationId = isset($_GET['conversation_id']) ? (int)$_GET['conversation_id'] : null;
         $users = (new UserManager())->getAllUsers($userId);
         $messages = (new MessagingManager())->getMessagesByConversationId($conversationId);
+        if ($conversationId) {
+             $isSelected = true;
+        }
+        
 
         $view = new View('messaging');
         $view->render('messaging', [
