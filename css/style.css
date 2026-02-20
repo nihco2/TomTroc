@@ -775,9 +775,7 @@ body {
     color: var(--secondary-color);
     font-size: .9em;
     display: inline-block;
-    /* join 3 columns; */
-    grid-column: 1 / span 3;
-    text-indent: 68px;
+    grid-column-start: 2;
 }
 
 .conversationItem a{

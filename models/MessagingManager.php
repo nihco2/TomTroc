@@ -39,7 +39,7 @@ class MessagingManager extends AbstractEntityManager {
     }
 
     public function addConversation($userId, $receiverId) {
-        $stmt = $this->db->prepare("INSERT INTO conversations (user_id, receiver_id, unread_messages_count) VALUES (?, ?, 0)");
+        $stmt = $this->db->prepare("INSERT INTO conversations (user_id, receiver_id) VALUES (?, ?)");
         $stmt->bindValue(1, (int)$userId, PDO::PARAM_INT);
         $stmt->bindValue(2, (int)$receiverId, PDO::PARAM_INT);
         // Récupérer l'ID de la conversation nouvellement créée
