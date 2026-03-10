@@ -518,6 +518,14 @@ body {
     text-align: left;
 }
 
+.booksTable tr:nth-child(even) {
+    background-color: var(--main-background);
+}
+
+.booksTable tr:last-child td {
+    border-bottom: none;
+}
+
 .booksTable td {
     padding-top: 10px;
     font-size: .9em;

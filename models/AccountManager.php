@@ -13,7 +13,7 @@ class AccountManager extends AbstractEntityManager {
     }
 
     public function getBooksByUserId($userId) {
-        $stmt = $this->db->prepare("SELECT * FROM books WHERE id = ?");
+        $stmt = $this->db->prepare("SELECT * FROM books WHERE user_id = ?");
         $stmt->bindValue(1, (int)$userId, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll();
