@@ -12,10 +12,12 @@
                 <div class="formGroup">
                     <label for="title">Titre</label>
                     <input type="text" id="title" name="title" value="<?= $book['title'] ?>">
+                    <p class="error">Le titre ne doit pas être vide</p>
                 </div>
                 <div class="formGroup">
                     <label for="author">Auteur</label>
                     <input type="text" id="author" name="author" value="<?= $book['author'] ?>">
+                    <p class="error">L'auteur ne doit pas être vide</p>
                 </div>
                 <div class="formGroup">
                     <label for="description">Commentaire</label>

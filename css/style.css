@@ -610,10 +610,20 @@ body {
     font-size: .9em;
 }
 
+#editBook .editForm .formGroup {
+    margin-bottom: 30px;
+}
+
+#editBook .editForm .formGroup .error {
+    color: #C56D6D;
+    font-size: .8em;
+    margin-top: 5px;
+    display: none;
+}
+
 #editBook .editForm input, #editBook .editForm textarea, #editBook .editForm select {
     width: 100%;
     padding: 10px;
-    margin-bottom: 30px;
     background-color: var(--input-color);
     border-radius: 4px;
     border: none;
@@ -623,6 +633,7 @@ body {
 
 #editBook .editForm select {
     width: 105%;
+    margin-bottom: 30px;
 }
 
 .editForm textarea {

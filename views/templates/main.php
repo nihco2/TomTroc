@@ -19,6 +19,37 @@
             popup.style = "display: none;";
         }
 
+        window.onload = function() {
+
+            const editForm = document.querySelector('.formEditBook');
+
+            if (editForm) {
+                editForm.addEventListener('submit', function(event) {
+                    let isValid = true;
+
+                    const titleInput = editForm.querySelector('#title');
+                    const authorInput = editForm.querySelector('#author');
+
+                    if (titleInput.value.trim() === '') {
+                        isValid = false;
+                        titleInput.nextElementSibling.style.display = 'block';
+                    } else {
+                        titleInput.nextElementSibling.style.display = 'none';
+                    }
+
+                    if (authorInput.value.trim() === '') {
+                        isValid = false;
+                        authorInput.nextElementSibling.style.display = 'block';
+                    } else {
+                        authorInput.nextElementSibling.style.display = 'none';
+                    }
+
+                    if(!isValid) {
+                        event.preventDefault();
+                    }
+                });
+            }
+        };
     </script>
 </head>
 <body>
