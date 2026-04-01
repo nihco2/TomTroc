@@ -66,4 +66,18 @@ class BooksController {
         header("Location: index.php?action=editBook&id=" . $id);
         exit();
     }
+
+    public function deleteBook() {
+        Utils::isUserConnected();
+        // On traite la suppression du livre.
+        $booksManager = new BooksManager();
+        // Récupérer l'ID du livre à supprimer
+        $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+        // Supprimer le livre de la base de données
+        $booksManager->deleteBook($id);
+
+        // Rediriger vers la page de liste des livres après la suppression
+        header("Location: index.php?action=account");
+        exit();
+    }
 }

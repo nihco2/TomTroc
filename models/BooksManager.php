@@ -44,4 +44,10 @@ class BooksManager extends AbstractEntityManager {
         $stmt->bindValue(5, (int)$bookId, PDO::PARAM_INT);
         return $stmt->execute();
     }
+
+    public function deleteBook($bookId) {
+        $stmt = $this->db->prepare("DELETE FROM books WHERE id = ?");
+        $stmt->bindValue(1, (int)$bookId, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
 }

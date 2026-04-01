@@ -41,9 +41,12 @@ try {
             break;
         case 'editAccount':
             $accountController->editAccount();
-            break;  
+            break;
         case 'editBook':
             $booksController->editBook();
+            break;
+        case 'deleteBook':
+            $booksController->deleteBook();
             break;
         case 'updateBook':
             $booksController->updateBook();
@@ -71,7 +74,7 @@ try {
             break;
         case 'login':
             $controller->loginUser();
-            break;  
+            break;
         case 'signout':
             $controller->signoutUser();
             break;

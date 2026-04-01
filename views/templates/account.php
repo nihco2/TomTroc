@@ -60,7 +60,7 @@
                         <td><span class="tag <?= $book['is_available'] ? 'available' : 'unavailable' ?>"><?= $book['is_available'] ? 'Disponible' : 'Indisponible' ?></span></td>
                         <td>
                             <a href="index.php?action=editBook&id=<?= $book['id'] ?>" class="editLink">Editer</a>
-                            <a href="index.php?action=bookDetail&id=<?= $book['id'] ?>" class="deleteLink">Supprimer</a>
+                            <a href="index.php?action=deleteBook&id=<?= $book['id'] ?>" class="deleteLink">Supprimer</a>
                         </td>
                     </tr>
                 <?php } ?>

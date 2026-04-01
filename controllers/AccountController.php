@@ -2,7 +2,8 @@
 
 require_once('models/AccountManager.php');
 
-class AccountController {
+class AccountController 
+{
     public function showAccount() {
         Utils::isUserConnected();
         $user = $_SESSION['user'];
