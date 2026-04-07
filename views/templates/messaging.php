@@ -10,7 +10,7 @@
             <?php
             foreach ($conversations as $conversation) {
                 echo '<div class="conversationItem' . ($conversation['id'] === $conversationId ? ' selected' : '') . '">';
-                echo '<a href="index.php?action=messaging&conversation_id=' . $conversation['id']. '">';
+                echo '<a href="index.php?action=messaging&conversation_id=' . $conversation['id'] . '">';
                 echo '<img src="img/user-profile-img.png" alt="Image de profil de ' . htmlspecialchars($conversation['username']) . '">';
                 echo htmlspecialchars($conversation['username']);
                 echo '<span class="lastMessageDate">' . date('H:i', strtotime($conversation['sent_at'])) . '</span>';
@@ -37,16 +37,14 @@
                     echo  htmlspecialchars($message['content']);
                     echo '</div>';
                     // date d'envoi du message au format jj/mm/aaaa hh:mm
-                    
-                    
+
+
                 } else {
                     echo '<p class="messageDate right">' . date('d/m/Y H:i', strtotime($message['sent_at'])) . '</p>';
                     // Message reçu par l'utilisateur connecté
                     echo '<div class="messageBubble receivedMessage">';
                     echo htmlspecialchars($message['content']);
                     echo '</div>';
-                    
-                   
                 }
             }
             ?>

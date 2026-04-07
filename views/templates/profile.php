@@ -1,5 +1,5 @@
 <section id="profile">
-    <div class="accountInfos">    
+    <div class="accountInfos">
         <div class="accountCard">
             <img src="img/user-profile-img.png" alt="Icône utilisateur" class="userIcon">
             <a href="index.php?action=profile" class="editAccountLink">Modifier</a>
@@ -15,31 +15,31 @@
         </div>
         <div class="accountCard rightCard">
             <table class="booksTable">
-            <thead>
-                <tr>
-                    <th>photo</th>
-                    <th>titre</th>
-                    <th>auteur</th>
-                    <th>description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $rowCount = 0;
-                foreach ($bookByUser as $book) {
-                    $rowCount++;
-                ?>
+                <thead>
                     <tr>
-                        <td><img src="img/<?= htmlspecialchars($book['img']) ?>.png" alt="Couverture du livre" class="book-cover-small" width="100"></td>
-                        <td><?= htmlspecialchars($book['title']) ?></td>
-                        <td><?= htmlspecialchars($book['author']) ?></td>
-                        <!-- limit 50 characters in description -->
-                        <td><?= htmlspecialchars(substr($book['description'], 0, 50)) ?>...</td>
+                        <th>photo</th>
+                        <th>titre</th>
+                        <th>auteur</th>
+                        <th>description</th>
                     </tr>
-                <?php } ?>
-            </tbody>
-        </table>
-            </div>
+                </thead>
+                <tbody>
+                    <?php
+                    $rowCount = 0;
+                    foreach ($bookByUser as $book) {
+                        $rowCount++;
+                    ?>
+                        <tr>
+                            <td><img src="img/<?= htmlspecialchars($book['img']) ?>.png" alt="Couverture du livre" class="book-cover-small" width="100"></td>
+                            <td><?= htmlspecialchars($book['title']) ?></td>
+                            <td><?= htmlspecialchars($book['author']) ?></td>
+                            <!-- limit 50 characters in description -->
+                            <td><?= htmlspecialchars(substr($book['description'], 0, 50)) ?>...</td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
+    </div>
     </div>
 </section>

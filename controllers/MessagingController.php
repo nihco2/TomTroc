@@ -2,9 +2,11 @@
 
 require_once('models/MessagingManager.php');
 
-class MessagingController {
+class MessagingController
+{
 
-    public function showMessaging() {
+    public function showMessaging()
+    {
         Utils::isUserConnected();
         $user = $_SESSION['user'];
         $userId = $user['id'];
@@ -13,9 +15,9 @@ class MessagingController {
         $users = (new UserManager())->getAllUsers($userId);
         $messages = (new MessagingManager())->getMessagesByConversationId($conversationId);
         if ($conversationId) {
-             $isSelected = true;
+            $isSelected = true;
         }
-        
+
 
         $view = new View('messaging');
         $view->render('messaging', [
@@ -29,7 +31,8 @@ class MessagingController {
         ]);
     }
 
-    public function sendMessage() {
+    public function sendMessage()
+    {
         Utils::isUserConnected();
         $user = $_SESSION['user'];
         $userId = $user['id'];
@@ -47,7 +50,7 @@ class MessagingController {
 
             // Enregistrer le message dans la base de données
             $messagingManager = new MessagingManager();
-        
+
             $messagingManager->sendMessage($conversationId, $senderId, $messageContent);
             // Rediriger vers la page de messagerie après l'envoi
             header('Location: index.php?action=messaging&conversation_id=' . $conversationId);
@@ -57,7 +60,8 @@ class MessagingController {
         }
     }
 
-    public function addConversation() {
+    public function addConversation()
+    {
         Utils::isUserConnected();
         $user = $_SESSION['user'];
         $userId = $user['id'];

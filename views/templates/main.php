@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +45,7 @@
                         authorInput.nextElementSibling.style.display = 'none';
                     }
 
-                    if(!isValid) {
+                    if (!isValid) {
                         event.preventDefault();
                     }
                 });
@@ -52,6 +53,7 @@
         };
     </script>
 </head>
+
 <body>
     <header class="header">
         <img src="img/logo.svg" alt="Logo Tom Troc" class="logo">
@@ -75,7 +77,7 @@
                     <img src="img/account-icon.svg" alt="Mon compte">
                     Mon compte
                 </a>
-                <?php 
+                <?php
                 // Si on est connecté, on affiche le bouton de déconnexion, sinon, on affiche le bouton de connexion : 
                 if (isset($_SESSION['user'])) {
                     echo '<a href="index.php?action=signout">Déconnexion</a>';
@@ -87,10 +89,10 @@
         </nav>
     </header>
 
-    <main class="mainContainer">    
+    <main class="mainContainer">
         <?= $content /* Ici est affiché le contenu réel de la page. */ ?>
     </main>
-    
+
     <footer class="footer">
         <p>Politique de confidentialité</p>
         <p>Mentions légales</p>

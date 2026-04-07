@@ -1,8 +1,10 @@
 <?php
 require_once('models/BooksManager.php');
 
-class HomeController {
-    public function showHome() {
+class HomeController
+{
+    public function showHome()
+    {
         Utils::isUserConnected();
         // On crée la vue pour la page d'accueil.
         $view = new View("Accueil");

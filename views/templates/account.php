@@ -1,6 +1,6 @@
 <section id="account">
     <h2 class="secondaryTitle">Mon compte</h2>
-    <div class="accountInfos">    
+    <div class="accountInfos">
         <div class="accountCard">
             <img src="img/user-profile-img.png" alt="Icône utilisateur" class="userIcon">
             <a href="index.php?action=profile" class="editAccountLink">Modifier</a>
@@ -21,17 +21,17 @@
                     <input type="email" id="email" name="email" value="<?= htmlspecialchars($user['email']) ?>">
                 </div>
                 <div class="userInfoField">
-                        <label for="username">Mot de passe</label>
-                        <input type="password" id="password" name="password" value="<?= $password ?>">
-                    </div>
-                    <div class="userInfoField">
-                        <label for="username">Pseudo</label>
-                        <input type="text" id="username" name="username" value="<?= htmlspecialchars($user['username']) ?>">
-                    </div>
-                    <button class="secondary-cta">Enregistrer</button>
-                </form>
-            </div>
+                    <label for="username">Mot de passe</label>
+                    <input type="password" id="password" name="password" value="<?= $password ?>">
+                </div>
+                <div class="userInfoField">
+                    <label for="username">Pseudo</label>
+                    <input type="text" id="username" name="username" value="<?= htmlspecialchars($user['username']) ?>">
+                </div>
+                <button class="secondary-cta">Enregistrer</button>
+            </form>
         </div>
+    </div>
     </div>
     <div>
         <table class="booksTable" cellpadding="30">

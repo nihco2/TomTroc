@@ -2,21 +2,26 @@
 
 require_once 'models/UserManager.php';
 
-class MainController {
-    public function showSignIn() {
+class MainController
+{
+    public function showSignIn()
+    {
         $view = new View("Connexion");
         $view->render('signin');
     }
-    public function showSignUp() {
+    public function showSignUp()
+    {
         $view = new View("Inscription");
         $view->render('signup');
     }
-    public function showHome() {
+    public function showHome()
+    {
         Utils::isUserConnected();
         $view = new View("Accueil");
         $view->render('home');
     }
-    public function createUser() {
+    public function createUser()
+    {
         // Récupération des données du formulaire
         $username = $_POST['username'];
         $email = $_POST['email'];
@@ -42,14 +47,16 @@ class MainController {
         // Redirection vers la page d'accueil après inscription réussie
         header('Location: index.php?action=home');
     }
-    public function signoutUser() {
+    public function signoutUser()
+    {
         // Destruction de la session utilisateur
         session_destroy();
         // Redirection vers la page de connexion
         header('Location: index.php?action=signin');
     }
 
-    public function loginUser() {
+    public function loginUser()
+    {
         // Récupération des données du formulaire
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -68,7 +75,7 @@ class MainController {
 
         // Stockage des informations de l'utilisateur dans la session
         $_SESSION['user'] = $user;
-        
+
 
         // Redirection vers la page d'accueil après connexion réussie
         header('Location: index.php?action=home');

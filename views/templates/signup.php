@@ -1,4 +1,3 @@
-
 <section class="login">
     <div>
         <h1 class="mainTitle">Inscription</h1>

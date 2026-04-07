@@ -1,7 +1,9 @@
 <?php
 
-class BooksController {
-    public function showBooks() {
+class BooksController
+{
+    public function showBooks()
+    {
         Utils::isUserConnected();
         // On crée la vue pour la liste des livres.
         $view = new View("Liste des livres");
@@ -12,7 +14,8 @@ class BooksController {
         $view->render('books', ['allBooks' => $books]);
     }
 
-    public  function searchBooks() {
+    public  function searchBooks()
+    {
         Utils::isUserConnected();
         // On crée la vue pour la liste des livres.
         $view = new View("Résultats de la recherche");
@@ -25,7 +28,8 @@ class BooksController {
         $view->render('books', ['allBooks' => $books]);
     }
 
-    public function showBookDetail() {
+    public function showBookDetail()
+    {
         Utils::isUserConnected();
         // On crée la vue pour le détail du livre.
         $view = new View("Détail du livre");
@@ -37,7 +41,8 @@ class BooksController {
         $view->render('bookDetail', ['book' => $book]);
     }
 
-    public function editBook() {
+    public function editBook()
+    {
         Utils::isUserConnected();
         // On crée la vue pour l'édition du livre.
         $view = new View("Édition du livre");
@@ -49,7 +54,8 @@ class BooksController {
         $view->render('editBook', ['book' => $book]);
     }
 
-    public function updateBook(){
+    public function updateBook()
+    {
         Utils::isUserConnected();
         // On traite la mise à jour du livre.
         $booksManager = new BooksManager();
@@ -67,7 +73,8 @@ class BooksController {
         exit();
     }
 
-    public function deleteBook() {
+    public function deleteBook()
+    {
         Utils::isUserConnected();
         // On traite la suppression du livre.
         $booksManager = new BooksManager();

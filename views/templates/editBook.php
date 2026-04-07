@@ -7,7 +7,7 @@
             <a class="editPhoto">Modifier la photo</a>
         </div>
         <div class="editForm">
-            <form action="index.php?action=updateBook"  method="post" class="formEditBook">
+            <form action="index.php?action=updateBook" method="post" class="formEditBook">
                 <input type="hidden" name="id" value="<?= $book['id'] ?>">
                 <div class="formGroup">
                     <label for="title">Titre</label>
@@ -29,7 +29,7 @@
                         <option value="1" <?= $book['is_available'] ? 'selected' : '' ?>>Disponible</option>
                         <option value="0" <?= !$book['is_available'] ? 'selected' : '' ?>>Indisponible</option>
                     </select>
-                <button type="submit" class="primaryButton">Valider</button>
+                    <button type="submit" class="primaryButton">Valider</button>
             </form>
         </div>
     </div>

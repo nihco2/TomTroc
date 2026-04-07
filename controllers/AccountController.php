@@ -2,9 +2,10 @@
 
 require_once('models/AccountManager.php');
 
-class AccountController 
+class AccountController
 {
-    public function showAccount() {
+    public function showAccount()
+    {
         Utils::isUserConnected();
         $user = $_SESSION['user'];
         $userId = $user['id'];
@@ -27,7 +28,8 @@ class AccountController
         ]);
     }
 
-    public function editAccount() {
+    public function editAccount()
+    {
         Utils::isUserConnected();
         $user = $_SESSION['user'];
         $userId = $user['id'];
@@ -66,7 +68,8 @@ class AccountController
         }
     }
 
-    public function showProfile() {
+    public function showProfile()
+    {
         Utils::isUserConnected();
         $user = $_SESSION['user'];
         $userId = $user['id'];
@@ -80,7 +83,7 @@ class AccountController
         $view = new View('profile');
         $view->render('profile', [
             'user' => $user,
-            'bookByUser'=> $accountManager->getBooksByUserId($userId),
+            'bookByUser' => $accountManager->getBooksByUserId($userId),
             'registrationDate' => date('d/m/Y', strtotime($user['created_at'])),
         ]);
     }
