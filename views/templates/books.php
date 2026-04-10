@@ -3,7 +3,8 @@
         <h3 class="secondaryTitle">Nos livres à l’échange</h3>
         <form action="index.php?action=search" method="POST">
             <img src="img/search-icon.svg" alt="Search Icon" class="searchIcon">
-            <input type="text" placeholder="Rechercher un livre..." name="search" class="searchInput">
+            <label for="search" class="visuallyHidden">Rechercher un livre</label>
+            <input type="text" id="search" placeholder="Rechercher un livre..." name="search" class="searchInput">
         </form>
     </div>
     <div class="booksContainer">

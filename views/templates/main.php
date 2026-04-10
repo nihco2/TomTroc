@@ -7,7 +7,7 @@
     <title>Tom Troc</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="img/favicon.png" />
-    <script defer>
+    <script>
         function showPopup() {
             const popup = document.querySelector('dialog');
             popup.showModal();

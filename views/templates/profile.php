@@ -41,5 +41,4 @@
             </table>
         </div>
     </div>
-    </div>
 </section>

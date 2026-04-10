@@ -9,7 +9,7 @@
     </div>
 </section>
 <section class="books-section">
-    <h3 class="secondaryTitle">Les derniers livres ajoutés</h3>
+    <h2 class="secondaryTitle">Les derniers livres ajoutés</h2>
     <div class="booksContainer">
         <?php foreach ($latestBooks as $book): ?>
             <div class="bookCard">
@@ -18,11 +18,12 @@
                 <p class="bookAuthor"><?= htmlspecialchars($book['author']) ?></p>
                 <p class="bookDescription">vendu par: <?= htmlspecialchars($book['username']) ?></p>
             </div>
-        <?php endforeach; ?>
+        <?php endforeach; ?>$
+    </div>
 </section>
 <section>
     <div class="benefitSection">
-        <h3 class="secondaryTitle">Comment ça marche ?</h3>
+        <h2 class="secondaryTitle">Comment ça marche ?</h2>
         <p>Échanger des livres avec TomTroc c’est simple et amusant ! Suivez ces étapes pour commencer :</p>
         <ul class="benefitsList">
             <li>Inscrivez-vous gratuitement sur notre plateforme.</li>
