@@ -14,14 +14,14 @@
             </div>
         </div>
         <div class="accountCard rightCard">
-            <h6>Vos informations personnelles</h6>
+            <h3>Vos informations personnelles</h3>
             <form action="index.php?action=editAccount" method="POST">
                 <div class="userInfoField">
                     <label for="email">Adresse Email</label>
                     <input type="email" id="email" name="email" value="<?= htmlspecialchars($user['email']) ?>">
                 </div>
                 <div class="userInfoField">
-                    <label for="username">Mot de passe</label>
+                    <label for="password">Mot de passe</label>
                     <input type="password" id="password" name="password" value="<?= $password ?>">
                 </div>
                 <div class="userInfoField">
@@ -31,7 +31,6 @@
                 <button class="secondary-cta">Enregistrer</button>
             </form>
         </div>
-    </div>
     </div>
     <div>
         <table class="booksTable" cellpadding="30">
@@ -60,7 +59,8 @@
                         <td><span class="tag <?= $book['is_available'] ? 'available' : 'unavailable' ?>"><?= $book['is_available'] ? 'Disponible' : 'Indisponible' ?></span></td>
                         <td>
                             <a href="index.php?action=editBook&id=<?= $book['id'] ?>" class="editLink">Editer</a>
-                            <a href="index.php?action=deleteBook&id=<?= $book['id'] ?>" class="deleteLink">Supprimer</a>
+                            <!-- add a confirmation before delete -->
+                            <a href="index.php?action=deleteBook&id=<?= $book['id'] ?>" class="deleteLink" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce livre ?')">Supprimer</a>
                         </td>
                     </tr>
                 <?php } ?>
